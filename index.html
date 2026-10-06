@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siyuan Li (黎思源)</title>
+    <meta name="description" content="杨帆（Yang Fan）的个人主页，电子商务专业，擅长电商运营、数据分析与办公软件。">
+    <title>杨帆 (Yang Fan)</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Merriweather:wght@700&family=Noto+Serif+SC:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Merriweather:wght@700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
@@ -15,31 +17,24 @@
 <body>
     <header>
         <div class="container header-container">
-            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch theme">🌛</button>
+            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="切换到深色主题" title="切换主题">🌛</button>
             <div class="profile-info">
-                <h1>Siyuan Li <span class="chinese-name">(黎思源)</span></h1>
+                <h1>杨帆 <span class="chinese-name">(Yang Fan)</span></h1>
                 <div class="subtitle-row">
-                    <p class="subtitle"><b>🤖 Artificial Intelligence Student</b></p>
-                    <p class="collaboration-note"><b>You are welcomed to reach out!</b></p>
+                    <p class="subtitle"><b>🛒 电子商务专业本科生</b></p>
+                    <p class="collaboration-note"><b>欢迎与我联系！</b></p>
                 </div>
-                <p><span class="icon">📞</span> Tel: (+86) 13815397394</p>
-                <p><span class="icon">✉️</span> Email: <a href="mailto:1793706453@qq.com">1793706453@qq.com</a> <span class="email-secondary">&amp; <a href="mailto:liaoyanqing666@gmail.com">liaoyanqing666@gmail.com</a></span></p>
-                <p><span class="icon">💬</span> WeChat: abcdefghi314159</p>
+                <p><span class="icon">📞</span> 电话：(+86) 134 6708 0849</p>
+                <p><span class="icon">✉️</span> 邮箱：<a href="mailto:3284539465@qq.com">3284539465@qq.com</a></p>
                 <div class="links">
-                    <a href="https://github.com/liaoyanqing666" target="_blank" class="button">🐱 GitHub</a>
-                    <a href="https://www.linkedin.com/in/siyuan-li-uga/" target="_blank" class="button">🔗 LinkedIn</a>
-                    <a href="files/resume.pdf" target="_blank" class="button">📄 Resume</a>
-                    <a href="files/undergraduate transcript.pdf" target="_blank" class="button">📝 Undergraduate Transcript</a>
+                    <a href="https://github.com/YFxbxb888" target="_blank" class="button">🐱 GitHub</a>
+                    <a href="files/杨帆简历.docx" target="_blank" class="button">📄 下载简历</a>
                 </div>
             </div>
-            <div class="carousel-container" tabindex="0" role="region" aria-label="Profile photo carousel">
-                <img src="images/photo5.png" class="carousel-image active" alt="Siyuan Li Photo 5">
-                <img src="images/photo1.png" class="carousel-image" alt="Siyuan Li Photo 1">
-                <img src="images/photo2.jpg" class="carousel-image" alt="Siyuan Li Photo 2">
-                <img src="images/photo3.jpg" class="carousel-image" alt="Siyuan Li Photo 3">
-                <img src="images/photo4.png" class="carousel-image" alt="Siyuan Li Photo 4">
-                <button class="prev" type="button" onclick="changeSlide(-1)" aria-label="Previous photo">&#10094;</button>
-                <button class="next" type="button" onclick="changeSlide(1)" aria-label="Next photo">&#10095;</button>
+            <div class="carousel-container" tabindex="0" role="region" aria-label="个人照片轮播">
+                <img src="images/photo-placeholder.svg" class="carousel-image active" alt="杨帆的个人照片（待替换）">
+                <button class="prev" type="button" onclick="changeSlide(-1)" aria-label="上一张照片">&#10094;</button>
+                <button class="next" type="button" onclick="changeSlide(1)" aria-label="下一张照片">&#10095;</button>
             </div>
         </div>
     </header>
@@ -60,7 +55,7 @@
         function updateThemeControl() {
             const isDark = document.documentElement.classList.contains('dark-theme');
             themeToggle.textContent = isDark ? '🌞' : '🌛';
-            themeToggle.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+            themeToggle.setAttribute('aria-label', isDark ? '切换到浅色主题' : '切换到深色主题');
         }
 
         try {
@@ -68,7 +63,7 @@
                 document.documentElement.classList.add('dark-theme');
             }
         } catch (error) {
-            // The page remains fully usable when storage is unavailable.
+            // 存储不可用时页面仍可正常使用。
         }
         updateThemeControl();
 
@@ -79,7 +74,7 @@
             try {
                 localStorage.setItem('theme', isDark ? 'dark' : 'light');
             } catch (error) {
-                // Ignore storage errors without interrupting the theme switch.
+                // 忽略存储错误，不影响主题切换。
             }
         });
 
@@ -94,23 +89,28 @@
             const slides = document.querySelectorAll('.carousel-image');
             slides.forEach((slide, index) => slide.setAttribute('aria-hidden', index === 0 ? 'false' : 'true'));
 
+            // 只有一张照片时隐藏左右切换按钮
+            const navButtons = document.querySelectorAll('.carousel-container .prev, .carousel-container .next');
+            if (slides.length <= 1) {
+                navButtons.forEach((btn) => { btn.style.display = 'none'; });
+            }
+
             document.querySelectorAll('a[target="_blank"]').forEach((link) => {
                 link.setAttribute('rel', 'noopener noreferrer');
             });
-
         });
     </script>
-    
+
     <section class="intro">
         <div class="container">
             <p>
-                I am Siyuan Li, a Ph.D. student in Computer Science in <a href="https://uga-llm-lab.github.io/" target="_blank">UGA LLM Lab</a> at the <a href="https://uga.edu" target="_blank">University of Georgia</a>, advised by Prof. <a href="https://uga-llm-lab.github.io/tianming-liu.html" target="_blank">Tianming Liu</a>, a distinguished researcher in medical AI and LLMs. I am also a visiting Ph.D. student at the <a href="https://camca.mgh.harvard.edu/" target="_blank">CAMCA Laboratory</a> at Harvard Medical School and Massachusetts General Hospital, working with Prof. <a href="https://xiangli-shaun.github.io/" target="_blank">Xiang Li</a>. I earned my Bachelor's degree in Artificial Intelligence from <a href="https://www.shu.edu.cn/" target="_blank">Shanghai University</a>, graduating first in my major. I prefer to explore, learn, and create things from scratch, rather than relying solely on pre-made solutions. For instance, I built this webpage myself (with an Easter egg 🐣), and it has received <a href="https://github.com/liaoyanqing666/liaoyanqing666.github.io" target="_blank"><img src="https://img.shields.io/github/stars/liaoyanqing666/liaoyanqing666.github.io" alt="Stars"/></a> <a href="https://github.com/liaoyanqing666/liaoyanqing666.github.io" target="_blank"><img src="https://img.shields.io/github/forks/liaoyanqing666/liaoyanqing666.github.io" alt="Forks"/></a>.
+                我是杨帆，山西工程技术学院管理工程系电子商务专业本科生，拥有约一年电商运营实战经验。我擅长数据分析与办公软件应用，持有<b>阿里巴巴商业数据分析师</b>、<b>中级数字财税师</b>等专业证书，求职方向为人力资源（HR）相关岗位。
             </p>
             <p>
-                As an intern at the <a href="https://en.westlake.edu.cn/" target="_blank">AI for Scientific Simulation and Discovery Lab</a> at <a href="https://ai4s.lab.westlake.edu.cn/" target="_blank">Westlake University</a>, I led an exploratory project on AI-driven physical law discovery under the mentorship of <a href="https://tailin.org/" target="_blank">Prof. Tailin Wu</a>. Within my university, I have participated in research projects under <a href="https://yuhang.netlify.app/" target="_blank">Prof. Hang Yu</a> and in the Brain-like Computing Center led by <a href="https://www.dlcloud.info/" target="_blank">Prof. Huiran Zhang</a>. For my undergraduate thesis, I designed and implemented a medical question-answering system incorporating multimodal RAG components, and fine-tuned multimodal models with medical data. Previously, under the guidance of <a href="https://cswhjiang.github.io/" target="_blank">Dr. Wenhao Jiang</a>, I worked on enhancing the complex reasoning capabilities of medical large language models.
+                在跨境电商方面，我参加了“Shopee 杯”跨境电商创新创业公益大赛，荣获<b>全国总决赛个人二等奖</b>；在店铺运营方面，我在第十二届全国大学生电子商务“创新、创意及创业”挑战赛（三创赛）中，独立负责微店与淘宝店铺的建立与运营，取得了<b>全校一等奖</b>。
             </p>
             <p>
-                My research interests are primarily focused on model architecture and algorithmic innovation. Currently, my specific areas of interest are (Multimodal) LLMs and AI for Medicine, with a particular focus on models' deep reasoning capabilities. I am dedicated to acquiring knowledge from diverse subfields to expand my expertise and exploring the possibilities of bridging existing knowledge with new domains.
+                我精通 Excel、CorelDRAW 等办公软件，擅长数据处理与分析，并具备新媒体营销能力。我乐于从实践中学习，愿意把数据分析与运营思维运用到未来的工作中。
             </p>
         </div>
     </section>
@@ -118,381 +118,131 @@
     <main>
         <div class="container">
             <section>
-                <h2>🎓 Education</h2>
+                <h2>🎓 教育背景</h2>
                 <div class="education-item">
                     <div class="education-header">
                         <div class="details">
-                            <h3>University of Georgia (UGA)</h3>
-                            <p>Ph.D. Student in Computer Science (<a href="https://computing.uga.edu/">School of Computing</a>)</p>
-                            <p class="date">08/2025 (Deferred to 01/2026) - 06/2030</p>
+                            <h3>山西工程技术学院</h3>
+                            <p>管理工程系（经济与管理系）· 电子商务 / 本科</p>
+                            <p class="date">2019.09 – 2023.06</p>
                         </div>
                         <div class="education-info">
-                            <p><strong>Supervisor:</strong> <a href="https://uga-llm-lab.github.io/tianming-liu.html" target="_blank">Prof. Tianming Liu</a></p>
-                            <p><strong>GPA:</strong> 4.0/4.0</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="education-item">
-                    <div class="education-header">
-                        <div class="details">
-                            <h3>Harvard University</h3>
-                            <p>Visiting Ph.D. Student (<a href="https://www.massgeneral.org/">Harvard Medical School and Massachusetts General Hospital</a>)</p>
-                            <p class="date">05/2026 - 06/2027</p>
-                        </div>
-                        <div class="education-info">
-                            <p><strong>Supervisor:</strong> <a href="https://xiangli-shaun.github.io/" target="_blank">Prof. Xiang Li</a></p>
-                            <p><strong>Research Area:</strong> AI/LLM for Medicine.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="education-item">
-                    <div class="education-header">
-                        <div class="details">
-                            <h3>Shanghai University (SHU)</h3>
-                            <p>B.E. in Artificial Intelligence (<a href="https://cs.shu.edu.cn/">School of Computer Engineering and Science</a>)</p>
-                            <p class="date">09/2021 - 06/2025</p>
-                        </div>
-                        <div class="education-info">
-                            <p><strong>GPA:</strong> 3.81/4.0 (93.60/100)</p>
-                            <p><strong>Ranking:</strong> 1/52 (1/31 in class)</p>
+                            <p><strong>学历：</strong>全日制本科</p>
+                            <p><strong>专业：</strong>电子商务</p>
                         </div>
                         <div class="education-introduction">
-                            <p><b>Key Courses</b>: Calculus (94), Linear Algebra (100), Object-Oriented Programming (94), Probability and Statistics (95), Data Structures (97), Pattern Recognition (90), Computer Vision (91), Operations and Optimization (88), Data Mining and Knowledge Processing (94), Mathematical Logic (95), Principles and Techniques of LLMs (95), Principles and Algorithms of AI (93)</p>
+                            <p><b>主修课程</b>：基础会计学、物流与供应链管理、宏观经济学、微观经济学、电子商务概论等。</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             <section>
-                <h2>🔬 Research/Work Experience</h2>
+                <h2>🔬 校园与工作经历</h2>
                 <div class="experience-item">
-                    <div class="details-with-logo">
-                        <h3>
-                            <img src="images/HMS&MGH.png" alt="Harvard Medical School and Massachusetts General Hospital" class="logo">
-                            Research Intern at Harvard Medical School and Massachusetts General Hospital
-                        </h3>
-                        <p>Medical Multimodal Large Language Models</p>
-                        <p>Advisor: Prof. Xiang Li</p>
-                        <p class="date">05/2026 - 05/2027</p>
+                    <div class="details">
+                        <h3>管理工程系学生会 · 外联部干部</h3>
+                        <p>山西工程技术学院</p>
+                        <p class="date">2019.09 – 2021.10</p>
                     </div>
-
                     <div class="content">
                         <ul>
-                            <li>Built a MIMIC-based benchmark for medical multi-step reasoning, covering clinical decision-making tasks across multiple stages to support more rigorous evaluation and improvement of medical large language models' complex reasoning capabilities.</li>
+                            <li>在系学生会外联部积极工作，多次负责承办校园赞助活动，获得“优秀学生干部”等荣誉。</li>
+                            <li>大二期间定期组织、安排培训，为学生会培养了相关人才。</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="experience-item">
-                    <div class="details-with-logo">
-                        <h3>
-                            <img src="images/EZCollegeApp.png" alt="Harvard Medical School and Massachusetts General Hospital" class="logo">
-                            Machine Learning Engineer at GyriQAI
-                        </h3>
-                        <p>Company info: Startup in AI for Education</p>
-                        <p><a href="https://ezcollegeapp.com/" target="_blank">Product Website: EZCollegeApp</a></p>
-                        <p class="date">03/2026 - now</p>
-                    </div>
-
-                    <div class="content">
-                        <ul>
-                            <li>Developed multi-step agents to conduct marketing research and competitor analysis, leveraging LLMs to automate data collection, analysis, and report generation.</li>
-                            <li>Conducted marketing outreach and managed official accounts across multiple platforms.</li>
-                            <li>Used LLMs to reconstruct webpage structures and identify fields available for autofill.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="details-with-logo">
-                        <h3>
-                            <img src="images/GML.png" alt="Guangming Lab" class="logo">
-                            Research Intern at Guangming Laboratory
-                        </h3>
-                        <p>Medical Large Language Models with Complex Reasoning Capabilities</p>
-                        <p>Lab full name: Guangming Laboratory (Guangdong Artificial Intelligence and Digital Economy Laboratory, Shenzhen)</p>
-                        <p>Advisor: Dr. Wenhao Jiang</p>
-                        <p>Project Undisclosed</p>
-                        <p class="date">09/2025 - 01/2026</p>
-                    </div>
-
-                    <div class="content">
-                        <ul>
-                            <li>Constructed a high-quality medical Instruction Tuning dataset by performing in-depth cleaning and structuring of large-scale private clinical records, and designing diverse QA templates to ensure comprehensive data coverage.</li>
-                            <li>Developed a fully automated Supervised Fine-Tuning (SFT) pipeline, streamlining the end-to-end workflow from heterogeneous data loading and dynamic prompt construction to efficient model training.</li>
-                            <li>Proposed an answer-guided self-distillation mechanism to generate Chain-of-Thought (CoT) reasoning based on correct answers. Incorporating these rationales into SFT guided the model to adopt optimal reasoning paths, significantly enhancing logical reasoning and accuracy in complex medical scenarios.</li>
-                            <li>Applied Reinforcement Learning for continuous policy optimization, further reinforcing the model's multi-step reasoning abilities and improving the accuracy of clinical decision-making.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="details-with-logo">
-                        <h3>
-                            <img src="images/Huawei.png" alt="Huawei" class="logo">
-                            AI Intern (NLP Focus) at Huawei
-                        </h3>
-                        <p>Location: Huawei Lianqiu Lake R&D Center, Shanghai</p>
-                        <p>Department: Ascend Computing Inference Development</p>
-                        <p><a href="https://github.com/vllm-project/vllm-ascend">Project Website</a></p>
-                        <p class="date">12/2024 - 03/2025</p>
-                    </div>
-
-                    <div class="content">
-                        <ul>
-                            <li>Contributed to the vLLM open-source community by identifying a bug (<a href="https://github.com/vllm-project/vllm/issues/11978">Issue #11978</a>) and submitting a fix that was merged into the main branch (<a href="https://github.com/vllm-project/vllm/pull/11979">PR #11979</a>).</li>
-                            <li>Migrated vLLM to the Ascend NPU platform (<a href="https://github.com/vllm-project/vllm-ascend">vllm-ascend</a>), responsible for unit testing and operator adaptation.</li>
-                            <li>Adapted speculative decoding on vllm-ascend.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="details-with-logo">
-                        <h3>
-                            <img src="images/SHU_BLCC.png" alt="SHU_BLCC" class="logo">
-                            SHU Brain-like Computing Center
-                        </h3>
-                        <p>AI for Recognizing Preference</p>
-                        <p>Advisor: Prof. Huiran Zhang (Shanghai University)</p>
-                        <p>Project Undisclosed</p>
-                        <p class="date">04/2024 - 09/2024</p>
-                    </div>
-
-                    <div class="content">
-                        <ul>
-                            <li>Proposed a novel ERP composite formula for analyzing human preferences.</li>
-                            <li>Achieved effective classification of preferences using AI methods combined with the developed formula.</li>
-                            <li>Authored a paper as the first author, available on <a href="https://arxiv.org/abs/2505.19879">arXiv</a>.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="details-with-logo">
-                        <h3>
-                            <img src="images/WestlakeU.png" alt="WestlakeU" class="logo">
-                            Research Intern at Westlake University
-                        </h3>
-                        <p>Rule Discovery in Physical Data/Video</p>
-                        <p>Advisor: Prof. Tailin Wu (Westlake University), Prof. Sebastian Musslick (Brown University)</p>
-                        <p>Project Undisclosed</p>
-                        <p class="date">07/2023 - 06/2024</p>
+                    <div class="details">
+                        <h3>19 级电子商务 1 班 · 心理委员</h3>
+                        <p>山西工程技术学院 经济与管理系</p>
+                        <p class="date">2019.09 – 2023.06</p>
                     </div>
                     <div class="content">
                         <ul>
-                            <li>Developed a transformer-based model and programmed experiments for symbolic regression tasks.</li>
-                            <li>Extended symbolic regression from mathematical expressions to the video domain by building a multimodal model.</li>
-                            <li>Explored the discovery of physical system patterns from videos to empower scientific discovery tasks.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="details-with-logo">
-                        <h3>
-                            <img src="images/SHU.png" alt="Shanghai University" class="logo">
-                            Research at Shanghai University
-                        </h3>
-                        <p>Video Frame Interpolation with PVT</p>
-                        <p>Advisor: Prof. Hang Yu (Shanghai University)</p>
-                        <p><a href="https://github.com/liaoyanqing666/PVT_v2_video_frame_interpolation">Project Website</a></p>
-                        <p class="date">04/2023 - 06/2023</p>
-                    </div>
-                    <div class="content">
-                        <ul>
-                            <li>Proposed a novel encoder-decoder video frame interpolation model leveraging PVT v2 as the encoder and a UNet-like decoder with deconvolution and residual concatenation.</li>
-                            <li>Achieved an SSIM of 0.9879 on the Vimeo90K Dataset, surpassing state-of-the-art methods.</li>
+                            <li>负责班级心理辅导工作，按照心委会要求严格执行工作计划，科学安排心理辅导内容。</li>
+                            <li>组织开展心理健康月、沙盘活动、心理知识竞赛等各环节活动。</li>
+                            <li>荣获中国心理学会颁发的“全国高校心理委员 MOOC 培训合格证书”。</li>
                         </ul>
                     </div>
                 </div>
             </section>
 
             <section>
-                <h2>💻 Projects (Selected by Learning Path)</h2>
+                <h2>💻 项目与实践</h2>
                 <div class="project-item">
                     <div class="details">
-                        <h3>Fine-Tuning of Multimodal Medical Large Models Integrating RAG Mechanisms</h3>
-                        <p>Undergraduate Thesis</p>
-                        <p class="date">05/2025</p>
+                        <h3>三创赛：微店与淘宝店铺运营</h3>
+                        <p>第十二届全国大学生电子商务“创新、创意及创业”挑战赛</p>
+                        <p class="date">全校一等奖</p>
                     </div>
                     <div class="content">
                         <ul>
-                            <li>Designed and implemented a medical content generation system combining Retrieval-Augmented Generation (RAG) and Multimodal Large Language Model (MLLM) fine-tuning.</li>
-                            <li>Developed a multimodal RAG framework supporting joint image-text input, featuring multiple retrieval paradigms such as joint embedding, label-guided retrieval, and image-text pair binding.</li>
-                            <li>Fine-tuned the Qwen2.5-VL model in two stages using Chinese medical QA and image-text datasets, yielding the Qwen2.5-VL-Med model with domain-specific reasoning capabilities.</li>
-                            <li>Built a modular web-based interactive system supporting local/cloud API deployment, multimodal input, streaming response, and history tracking.</li>
+                            <li>独立负责微店店铺与淘宝店铺的建立和运营，涵盖选品、上架、推广与客服等全流程。</li>
+                            <li>通过数据分析优化商品与运营策略，最终取得全校一等奖的优异成绩。</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="project-item">
                     <div class="details">
-                        <h3>Cross-Modal Pretrained Model Alignment</h3>
-                        <p><a href="https://github.com/liaoyanqing666/Pretrained_Model_Alignment">Project Website</a></p>
-                        <p class="date">07/2024</p>
+                        <h3>“Shopee 杯”跨境电商创新创业公益大赛</h3>
+                        <p>跨境电商店铺运营与方案策划</p>
+                        <p class="date">全国总决赛 · 个人二等奖</p>
                     </div>
                     <div class="content">
                         <ul>
-                            <li>Proposed and implemented a method to quickly align pre-trained models from different modalities.</li>
-                            <li>Designed a Siamese neural network similarity module to align pretrained models with varying embedding dimensions.</li>
-                            <li>Achieved rapid model alignment between text and image modalities with minimal training on a standard image classification dataset, bypassing the need for large "image-description" datasets (e.g., CLIP).</li>
-                            <li>Experimentally demonstrated the project's ability to align quickly with minimal GPU requirements while maintaining satisfactory performance.</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="project-item">
-                    <div class="details">
-                        <h3>Reproduction and Experimentation of TextCNN</h3>
-                        <p><a href="https://github.com/liaoyanqing666/TextCNN-Chinese-text-data-mining-">Project Website</a></p>
-                        <p class="date">03/2023</p>
-                    </div>
-                    <div class="content">
-                        <ul>
-                            <li>Reproduced and experimented with the TextCNN model.</li>
-                            <li>Performed tokenization and encoding of sentence content, followed by padding or truncating sentence lengths.</li>
-                            <li>Implemented word embedding and utilized multiple convolutional kernels of varying sizes for feature extraction, pooling, and final classification through fully connected layers.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <div class="details">
-                        <h3>CNN-LSTM Based Video Classification</h3>
-                        <p><a href="https://github.com/liaoyanqing666/CNN_LSTM_video_classification">Project Website</a></p>
-                        <p class="date">02/2023</p>
-                    </div>
-                    <div class="content">
-                        <ul>
-                            <li>Developed a network model based on CNN for video frame feature extraction and LSTM for sequential frame feature computation.</li>
-                            <li>Compared the classification performance of KNN and ANN after freezing the feature extraction model parameters.</li>
-                            <li>Achieved 92% accuracy on a public dataset, comparable to results from another study using a non-public dataset.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <div class="details">
-                        <h3>Handwriting Recognition System Based on Siamese Neural Networks</h3>
-                        <p><a href="https://github.com/liaoyanqing666/siamese_neural_network_OfHSV">Project Website</a></p>
-                        <p class="date">11/2022</p>
-                    </div>
-                    <div class="content">
-                        <ul>
-                            <li>Independently designed and coded a system utilizing VGG16 for signature feature extraction.</li>
-                            <li>Achieved 100% accuracy on the CEDAR dataset using Siamese neural networks for classification.</li>
-                            <li>Developed frontend-backend interaction logic enabling the utilization of training results on web platforms.</li>
+                            <li>围绕跨境电商场景完成店铺运营与创新创业方案，独立参加全国总决赛。</li>
+                            <li>荣获全国总决赛个人二等奖，积累了跨境电商平台的实操经验。</li>
                         </ul>
                     </div>
                 </div>
             </section>
 
             <section>
-                <h2>🏆 Awards</h2>
+                <h2>🏆 荣誉奖励</h2>
                 <ul class="awards-list">
-                    <li><span class="award-description"><a href="https://icpc.global/" target="_blank">ICPC (International Collegiate Programming Contest) Asia Regional Contest (Hefei)</a> Bronze Medal 🥉</span><span class="date">11/2023</span></li>
-                    <li><span class="award-description"><a href="https://icpc.global/" target="_blank">ICPC (International Collegiate Programming Contest) Asia Regional Contest (Nanjing)</a> Bronze Medal 🥉</span><span class="date">11/2022</span></li>
-                    <li><span class="award-description"><a href="http://www.asc-events.org/" target="_blank">ASC Student Supercomputer Challenge</a> National Second Prize 🥈</span><span class="date">02/2024</span></li>
-                    <li><span class="award-description"><a href="https://dasai.lanqiao.cn/" target="_blank">Lanqiao Cup C/C++ Programming Contest (National)</a> Third Prize 🥉</span><span class="date">06/2023</span></li>
-                    <li><span class="award-description"><a href="https://dasai.lanqiao.cn/" target="_blank">Lanqiao Cup C/C++ Programming Contest (Shanghai Division)</a> First Prize 🥇</span><span class="date">04/2023</span></li>
-                    <li><span class="award-description"><a href="https://ccpc.io/" target="_blank">CCPC (China Collegiate Programming Contest) Shanghai Programming Contest</a> Silver Medal 🥈</span><span class="date">10/2022</span></li>
+                    <li><span class="award-description">“Shopee 杯”跨境电商创新创业公益大赛 全国总决赛 个人二等奖 🥈</span><span class="date">2022</span></li>
+                    <li><span class="award-description">第十二届全国大学生电子商务“三创赛” 全校一等奖 🥇</span><span class="date">—</span></li>
+                    <li><span class="award-description">全国大学生直播电商技能竞赛 三等奖 🥉</span><span class="date">2021</span></li>
+                    <li><span class="award-description">全国应用型人才综合技能大赛 三等奖 🥉</span><span class="date">2021</span></li>
+                    <li><span class="award-description">“优秀学生干部”荣誉</span><span class="date">—</span></li>
                 </ul>
             </section>
 
             <section>
-                <h2>📚 Papers (First / Co-first Author)</h2>
-                <div class="papers-item">
-                    <div class="details">
-                        <h3>Imaging-Centered Artificial Intelligence for Precision Cancer Immunotherapy: Multimodal Biomarkers, Treatment-Effect Estimation, and Clinical Translation</h3>
-                        <p><a href="https://www.researchsquare.com/article/rs-10468208/v1">Paper Link</a> Research Square Preprint. DOI: 10.21203/rs.3.rs-10468208/v1.</p>
-                    </div>
-                    <div class="content">
-                        <ul>
-                            <li>Authors: Shengyang Zhong, <b>Siyuan Li</b>, Wanrong Yang, Zheng Zheng, Zhengliang Liu, Jin Xie, Jin Li, Bin Yi, Lin Zhao, Xiang Li, Wei Liu, Lian Zhang, Tianming Liu, Ning Qiang.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="papers-item">
-                    <div class="details">
-                        <h3>ASTELD: A Six-Axis Classification Framework for Autonomous AI Agents - Design, Evaluation, and an OpenClaw Case Study</h3>
-                        <p><a href="https://arxiv.org/abs/2608.05201">Paper Link</a> arXiv Preprint. arXiv:2608.05201.</p>
-                    </div>
-                    <div class="content">
-                        <ul>
-                            <li>Authors: <b>Siyuan Li</b>, Peng Shu, Churan Yu, Peilong Wang, Ruidong Zhang, Bowen Guo, Xinliang Li, Ruiyu Yan, Arif Hassan Zidan, Yi Pan, Wei Ruan, Lifeng Chen, Junhao Chen, Zhaojun Ding, Yiwei Li, Zhengliang Liu, Haixing Dai, Lin Zhao, Yu Bao, Xiang Li, Wei Zhang, Tianming Liu.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="papers-item">
-                    <div class="details">
-                        <h3>The Study of Human Preference Based on Integrated Analysis of N1 and LPP Components</h3>
-                        <p><a href="https://arxiv.org/abs/2505.19879">Paper Link</a> arXiv Preprint. arXiv:2505.19879.</p>
-                    </div>
-                    <div class="content">
-                        <ul>
-                            <li>Authors: <b>Siyuan Li</b>, Xiangze Meng, Yijian Yang, Yiwen Xu, Yunfei Wang, Chenghu Qiu, Hanyi Jiang, Pin Wu, Shengbo Chen, Xiao Wei, Hao Wang, Lan Ni, Huiran Zhang.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="papers-item">
-                    <div class="details">
-                        <h3>Research advances in offline handwritten signature verification</h3>
-                        <p><a href="https://www.ewadirect.com/proceedings/ace/article/view/4365">Paper Link</a> Applied and Computational Engineering, 6(1), 1244-1252. DOI: 10.54254/2755-2721/6/20230653.</p>
-                    </div>
-                    <div class="content">
-                        <ul>
-                            <li>Authors: Yuhang Guo, <b>Siyuan Li</b>, Jinxuan Wu</li>
-                        </ul>
-                    </div>
-                </div>
+                <h2>📜 资格证书</h2>
+                <ul class="chip-list">
+                    <li>阿里巴巴商业数据分析师</li>
+                    <li>中级数字财税师</li>
+                    <li>新媒体营销职业技能等级证书</li>
+                    <li>全国高校心理委员 MOOC 培训合格证书</li>
+                </ul>
             </section>
 
             <section>
-                <h2>🛠️ Skills</h2>
+                <h2>🛠️ 技能特长</h2>
                 <ul class="skills-list">
-                    <li><strong>Programming Languages:</strong> Python (Advanced), C++ (Proficient), HTML (Proficient), MATLAB (Familiar), CSS (Familiar), JavaScript (Familiar)</li>
-                    <li><strong>Tools:</strong> Git/Github, Microsoft Word, LaTeX (Overleaf), Markdown, VS Code Remote SSH</li>
-                    <li><strong>AI-related Skills:</strong> PyTorch, Transformers, vLLM, AI Agents, LLMs</li>
+                    <li><strong>办公软件</strong>Excel（精通）、CorelDRAW、Word、PowerPoint</li>
+                    <li><strong>电商运营</strong>店铺搭建与运营、跨境电商、直播电商、新媒体营销</li>
+                    <li><strong>数据分析</strong>数据统计与分析、数据可视化、基础会计、财税基础</li>
                 </ul>
             </section>
 
             <section>
-                <h2>🤝 Extracurricular & Volunteer Activities</h2>
+                <h2>🤝 公益与课外活动</h2>
                 <div class="activity-item">
                     <div class="details">
-                        <h3>New Media Center, School of Computer Engineering and Science</h3>
-                        <p>Chairman</p>
-                        <p class="date">01/2022 - 01/2023</p>
+                        <h3>公益活动</h3>
+                        <p>无偿献血、博爱书屋捐赠等</p>
                     </div>
                     <div class="content">
                         <ul>
-                            <li>Managed content publication on the School's official WeChat account and coordinated daily operations.</li>
-                            <li>Organized and managed recruitment presentations, student representative meetings, and other related affairs.</li>
+                            <li>积极参与无偿献血、博爱书屋捐赠等公益志愿活动。</li>
+                            <li>参与组织心理健康月、沙盘活动、心理知识竞赛等校园活动。</li>
                         </ul>
                     </div>
-                </div>
-
-                <div class="activity-item">
-                    <div class="details">
-                        <h3>ByteDance</h3>
-                        <p>Campus Ambassador</p>
-                        <p class="date">03/2022 - 06/2022</p>
-                    </div>
-                    <div class="content">
-                        <ul>
-                            <li>Assisted in promoting spring recruitment and summer internships.</li>
-                            <li>Distributed promotional materials and internal referral codes.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="activity-item">
-                    <b>Volunteer Hours: 100h+ ⏳</b>
                 </div>
             </section>
         </div>
@@ -500,13 +250,9 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Siyuan Li. All rights reserved. Original content available in the <a href="https://github.com/liaoyanqing666/liaoyanqing666.github.io" target="_blank">website repository</a>.</p>
-            <p>Check out a game I wrote: <a href="game.html">Click the Ball Game 🎮</a>.</p>
+            <p>&copy; 2026 杨帆. 保留所有权利。</p>
+            <p>来看看我写的小游戏：<a href="game.html">点击小球游戏 🎮</a>。</p>
         </div>
     </footer>
-
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="track-visitors.js"></script>
 </body>
 </html>
